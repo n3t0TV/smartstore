@@ -1,0 +1,32 @@
+<launch>
+    <arg name="package_name" value="container" />
+
+	<node name="version_node" pkg="container" type="versionManagerNode" output="screen">
+		<param name="~log_level" value="3" />
+	</node>
+
+	<node name="mqtt_manager_node" pkg="container" type="mqttManagerNode" output="screen">
+		<param name="~log_level" value="0" />
+	</node>
+
+	<node name="mqtt_heartbeat" pkg="$(arg package_name)"
+     type="mqtt_heartbeat_node" output="screen">
+        <param name="log_level" type="int" value="1"/>
+        <param name="package_name" type="string" value="$(arg package_name)"/>
+	</node>
+
+	<node name="gps_driver_node" pkg="container" type="gpsDriverNode" output="screen">
+		<param name="~log_level" value="3" />
+	</node>
+
+	<node name="lock_driver_node" pkg="container" type="lockDriverNode" output="screen">
+		<param name="~log_level" value="0" />
+	</node>
+
+	<node name="battery_driver_node" pkg="container" type="batteryDriverNode" output="screen">
+		<param name="~log_level" value="2" />
+	</node>
+
+    <include file="$(find mobile_payment_interface)/launch/payment_reader.launch" />
+    <include file="$(find mobile_payment_interface)/launch/speaker.launch" />
+</launch>

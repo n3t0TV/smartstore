@@ -1,0 +1,12 @@
+int32 kApprovedResponseCode=0
+
+int32 express_response_code
+string express_response_message
+string express_transaction_date
+string express_transaction_time
+string express_transaction_timezone
+string transaction_id
+string approval_number
+string reference_number
+float32 approved_amount
+bool is_mock_response

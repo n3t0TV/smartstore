@@ -1,0 +1,11 @@
+<launch>
+  <arg name="package_name" value="mobile_payment" />
+  <arg name="certs_folder_path" value="/usr/share/idtech/" />
+
+  <node name="payment_reader" pkg="$(arg package_name)" respawn="true"
+   respawn_delay="10" type="payment_reader_node"
+   args="-c $(arg certs_folder_path)" output="screen">
+    <param name="log_level" type="int" value="1"/>
+    <param name="package_name" type="string" value="$(arg package_name)"/>
+  </node>
+</launch>

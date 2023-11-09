@@ -1,0 +1,12 @@
+string kTestAccountId=1188346
+string kTestAccountToken=$YOUR_TEST_TOKEN
+string kTestAcceptorId=$YOUR_TEST_ACCEPTOR_ID
+string kTortoiseAccountId=$YOUR_ACCOUNT_ID
+string kTortoiseAccountToken=$YOUR_PROD_TOPKEN
+string kTortoiseAcceptorId=$YOUR_ACCEPTOR_ID
+
+string id
+string token
+string acceptor_id
+bool use_test_account
+bool use_tortoise_account
